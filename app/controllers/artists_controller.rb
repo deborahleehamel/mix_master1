@@ -3,7 +3,9 @@ class ArtistsController < ApplicationController
   def index
   end
 
+# define instance variable to use
   def new
+    @artist = Artist.new
   end
 
 # create an artist then redirect to it's show page

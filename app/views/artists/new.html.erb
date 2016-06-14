@@ -1,7 +1,8 @@
 <h1>Add a New Artist </h1>
 
 <!-- make form for new artist with appropriate fields -->
-<%= form_for(Artist.new) do |f| %>
+<!-- use instance variable for @artist instead for making object Artist.new -->
+<%= form_for(@artist) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
