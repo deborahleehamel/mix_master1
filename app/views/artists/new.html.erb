@@ -3,6 +3,16 @@
 <!-- make form for new artist with appropriate fields -->
 <!-- use instance variable for @artist instead for making object Artist.new -->
 <%= form_for(@artist) do |f| %>
+<!-- check if errors exist on artist object -->
+  <% if @artist.errors.any? %>
+    <h2><%= pluralize(@artist.errors.count, "error") %> prohibited this record from being saved:</h2>
+    <ul>
+      <% @artist.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+    <% end %>
+    
   <%= f.label :name %>
   <%= f.text_field :name %>
 
