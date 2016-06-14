@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
 
   def index
+    @artists = Artist.all
   end
 
 # define instance variable to use
