@@ -4,4 +4,6 @@
 <!-- then access it in this view -->
 <div>
 <%= image_tag @artist.image_path %>
+
+<%= link_to "Edit", edit_artist_path(@artist) %>
 </div>

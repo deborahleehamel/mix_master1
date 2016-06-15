@@ -23,6 +23,20 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
   end
 
+  def edit
+    @artist = Artist.find(params[:id])
+  end
+
+  def update
+    @artist = Artist.find(params[:id])
+
+    if @artist.update(artist_params)
+      redirect_to @artist
+    else
+      render :edit
+    end
+  end
+
   private
 # set up strong params to specify what parameters/attributes permitterd
   def artist_params
